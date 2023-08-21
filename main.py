@@ -7,6 +7,7 @@ from alexnet import AlexNet
 
 # Choosing device (NVIDIA CUDA GPU, Apple Silicon GPU, CPU)
 device = BasicUtils().device_chooser()
+print("Using device: ",device)
 
 # Loss lists
 train_losses = []
