@@ -12,8 +12,8 @@ class AlexNet(nn.Module):
         )
         self.layer2 = nn.Sequential(
             nn.Conv2d(96, 256, kernel_size=5, stride=1, padding=2),
-            nn.ReLU(inplace=True),
             nn.BatchNorm2d(256),
+            nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=3, stride=2)
         )
         self.layer3 = nn.Sequential(
