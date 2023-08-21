@@ -18,9 +18,12 @@ num_classes = 10
 batch_size = 100
 learning_rate = 0.001
 
+# Resizing the dataset to 224x224
+transforms = torchvision.transforms.Compose([torchvision.transforms.Resize((224,224)), torchvision.transforms.ToTensor()])
+
 # Dataset
-train_dataset = torchvision.datasets.CIFAR10(root="data", train=True, transform=torchvision.transforms.ToTensor(), download=True)
-test_dataset = torchvision.datasets.CIFAR10(root="data", train=False, transform=torchvision.transforms.ToTensor(), download=True)
+train_dataset = torchvision.datasets.CIFAR10(root="data", train=True, transform=transforms, download=True)
+test_dataset = torchvision.datasets.CIFAR10(root="data", train=False, transform=transforms, download=True)
 
 # Data loader
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
