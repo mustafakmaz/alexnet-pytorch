@@ -34,7 +34,7 @@ class AlexNet(nn.Module):
         self.flatten = nn.Flatten()
         self.fc1 = nn.Sequential(
             nn.Dropout(0.5),
-            nn.Linear(256, 4096),
+            nn.Linear(50176, 4096),
             nn.ReLU(inplace=True)
         )
         self.fc2 = nn.Sequential(
