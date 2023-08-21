@@ -23,6 +23,10 @@ class BasicUtils():
         if loss == "crossentropy":
             loss_fn = torch.nn.CrossEntropyLoss()
 
+        else:
+            print("Loss function not found! Using Cross Entropy Loss for default loss function.")
+            loss_fn = torch.nn.CrossEntropyLoss()
+            
         return loss_fn
 
     def optim_chooser(self, optim, model, learning_rate):
@@ -38,7 +42,11 @@ class BasicUtils():
         elif optim == "adagrad":
             optimizer = torch.optim.Adagrad(model.parameters(), lr=learning_rate)
 
-        return optimizer
+        else:
+            print("Optimizer not found! Using SGD for default optimizer.")
+            optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+
+        return optimizer 
     
 class TrainTestUtils():
     def __init__(self):
