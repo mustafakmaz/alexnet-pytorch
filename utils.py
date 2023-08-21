@@ -16,7 +16,6 @@ class BasicUtils():
         else:
             device = "cpu" # CPU
 
-        print(f"Using device: {device}")
         return device
     
     def loss_chooser(self, loss):
@@ -26,7 +25,7 @@ class BasicUtils():
         else:
             print("Loss function not found! Using Cross Entropy Loss for default loss function.")
             loss_fn = torch.nn.CrossEntropyLoss()
-            
+
         return loss_fn
 
     def optim_chooser(self, optim, model, learning_rate):
