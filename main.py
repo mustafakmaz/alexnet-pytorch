@@ -35,7 +35,7 @@ model = AlexNet(num_classes).to(device)
 
 # Defining loss and optimizer functions
 loss_fn = BasicUtils().loss_chooser("crossentropy")
-optimizer = BasicUtils().optim_chooser("adamw", model, learning_rate)
+optimizer = BasicUtils().optim_chooser("adam", model, learning_rate)
 
 # Train and test stage
 for i in range(num_epochs):
@@ -46,6 +46,9 @@ for i in range(num_epochs):
 # Showing results (train and test losses)
 plt.plot(train_losses,"g",label="train loss")
 plt.plot(test_losses,"r",label="test loss")
+plt.title("alexnet losses")
+plt.xlabel("epochs")
+plt.ylabel("losses")
 plt.legend(loc="upper left")
 plt.show()
 
