@@ -19,8 +19,8 @@ num_classes = 10
 batch_size = 100
 learning_rate = 0.001
 
-# Resizing the dataset to 224x224
-transforms = torchvision.transforms.Compose([torchvision.transforms.Resize((224,224)), torchvision.transforms.ToTensor()])
+# Resizing the dataset to 227x227
+transforms = torchvision.transforms.Compose([torchvision.transforms.Resize((227,227)), torchvision.transforms.ToTensor()])
 
 # Dataset
 train_dataset = torchvision.datasets.CIFAR10(root="data", train=True, transform=transforms, download=True)
